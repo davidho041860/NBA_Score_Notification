@@ -12,8 +12,8 @@ response = requests.get(OWM_Endpoint)
 score_stats = response.json()
 
 
-account_sid = "AC1651b84f6775ce95d2297c4831951df5"
-auth_token = "0a2922826d56d582d7204895185384b2"
+account_sid = "Your_Account_sid"
+auth_token = "Your_auth_token"
 
 
 all_games = score_stats["scoreboard"]["games"]
@@ -57,7 +57,7 @@ elif game_finished == True and has_game == True:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         body=result_score,
-        from_="+16467607418",
-        to="+886912167543"
+        from_="Your_twilio_number",
+        to="Receiver_number"
     )
     print(message.sid)
